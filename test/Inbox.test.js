@@ -27,6 +27,11 @@ describe("Inbox", () => {
 		console.log(inbox)
 		assert.ok(inbox.options.address)
 	})
+
+	it("has a default msg", async () => {
+		const message = await inbox.methods.message().call()
+		assert.equal(message, "Hi there")
+	})
 })
 
 // Mocha Test Exmample
